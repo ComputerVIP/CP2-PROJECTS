@@ -1,5 +1,8 @@
 #Vincent Johnson financial calculator
 #ms larse did a thing
+#-Ms. Larose
+
+#By the way, I'm keeping that and adding it to every assignment.
 '''
 How long it will take to save for a goal based on a weekly or monthly deposit
 Compound Interest Calculator 
@@ -7,11 +10,13 @@ Budget Allocator (use set percentages to divide an income into spending categori
 Sale Price Calculator (apply discounts to prices)
 Tip Calculator
 '''
+
 #This is for time to goal, will round for weeks to goal
 def add():
     ans = float(input("What's your goal?\n"))
     ans2 = float(input("How much money depositted per week?\n"))
     return ("This is how many weeks you need to save:", round((ans/ans2), 1))
+
 #This is for interest, the if statements are to convert the number to a decimal
 def interest():
     ans = input("How much interest? (3% is 3)\n")
@@ -27,6 +32,7 @@ def interest():
         ans2 = ans2 * ans
         ans3 -= 1
     return (f"You will have {ans2} after {ans3} weeks")
+
 #This is for budget allocator, the if statements are to convert the numbers to decimals
 def budget():
     ans = float(input("How much it your weekly income?\n"))
@@ -45,6 +51,7 @@ def budget():
     ans3 = ans*ans3
     print(f"The amount of your budget for your first allocation is {ans2}")
     return (f"The amount of your budget for your second allocation is {ans3}")
+
 #This is for sale price, the if statements are to convert the number to decimal
 def sale():
     ans = float(input("What is the manufacturing price?\n"))
@@ -58,6 +65,7 @@ def sale():
         ans2 = float(f"1.0{ans2}")
     ans2 = ans*ans2
     return (f"For {ans3}% profit, the price should be {ans2}")
+
 #This is for tip, the if statements are to convert the number to a decimal
 def tip():
     ans = float(input("What is the price of the object?\n"))
@@ -71,6 +79,8 @@ def tip():
         ans2 = float(f"1.0{ans2}")
     ans2 = ans*ans2
     return (f"For {ans3}% tip, the price should be {ans2}")
+
+#The main function to choose which function to do
 def main():
     ans = int(input("What would you like to do?\n1 for time to goal\n2 for interest\n3 for budget allocator\n4 for sale price\n5 for tip calculator\n"))
     if ans == 1:
