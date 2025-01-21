@@ -72,6 +72,7 @@ def add(lst, cnt):
         cnt = 0
         return cnt, lst
 
+#Shows you the list
 def view(lst, cnt):
     ans = int(input(" 1 for menu\n 2 for end\n"))
     if ans == 1:
@@ -81,6 +82,9 @@ def view(lst, cnt):
         cnt = 0
         return cnt, lst
 
+#Finally got it Ms. Larose
+#I had ChatGPT teach me return values for multiple things, it works great
+#This function is the menu and will keep running unless the variable is 0
 def main(lst, cnt):
     while cnt > 0:  # Ensure the main loop only runs if cnt > 0
         ans = int(input("\nWhat would you like to do?\n 1 for add to list\n 2 for remove items\n 3 for search\n 4 view list\n 5 for exit\n"))
@@ -99,5 +103,6 @@ def main(lst, cnt):
             print("Invalid option. Please choose a valid option.")
     return cnt, lst
 
+#This ensures that a function will always be running unless it is told not to
 while cnt > 0:
     cnt, lst = main(lst, cnt)
