@@ -1,8 +1,10 @@
 #Vincent Johnson- Morse Code Translator
+
+#Repeat variable
 rpt = 1
 
-def main(rpt):
-  code = {
+#Dictionary of the items
+code = {
   'A': '.-',
   'B': '-...',
   'C': '-.-.',
@@ -59,21 +61,34 @@ def main(rpt):
   '$': '...-..-',
   '@': '.--.-.'
 }
+
+#This function uses a for loop to get the corresponding character in the dictionary and add it to a list
+def translate1(code, rpt):
   txt = input("Enter text to be translated:\n")
   txt = txt.upper()
-  snt = ""
-  for i in txt:
+
+  #The list is here!
+  a = list(txt)
+  snt = []
+  for i in a:
     if i in code:
-      snt = snt + str(code[i]) + " "
+      #Next list here!
+      snt.append(code[i])
     else:
       pass
   print(snt)
-  rpt = input("1 for repeat\n2 for exit\n")
-  if rpt == "1":
-    rpt = 1
-    return rpt
+  return code, rpt
+
+#This runs the menu
+def main(code, rpt):
+  ans = input("What would you like to do?\n1 for translate to morse code\n2 for exit\n    ")
+  if ans == "1":
+    code, rpt = translate1(code, rpt)
+    pass
   else:
     rpt = 0
-    return rpt
+    pass
+  return code, rpt
+
 while rpt > 0:
-  rpt = main(rpt)
+  code, rpt = main(code, rpt)
