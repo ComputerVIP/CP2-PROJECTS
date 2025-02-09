@@ -24,11 +24,10 @@ cnt = 1
 
 # This function just finds the index of the item and adds one to show what position it is in a list to a normal person, then it prints the list
 def srch(lst, cnt):
-    ans = input("What would you like to search for?\n")
-    if ans in lst:
-        print(f"{lst}\n{ans} is in the list")
-    else:
-        print(f"{ans} not found in the list.")
+    ans = input("What would you like to search for?\n").upper()
+    for key, values in lst.items():
+        if ans in values:
+            print(f"{ans} is in the list")
     ans = int(input(" 1 for menu\n 2 for end\n"))
     if ans == 1:
         cnt = 1
@@ -40,15 +39,14 @@ def srch(lst, cnt):
 # This function just repeats for how many things you need to get rid of, and removes them from the list
 def remove(lst, cnt):
     rpt = int(input("How many things do you want to remove from your list?\n"))
-    print(f"rpt: {rpt}\n")
     shw = 0
     while shw < rpt:
+        print(lst)
         shw += 1
-        ad = input(f"What item do you want to remove?\n({shw}/{rpt})\n")
-        if ad in lst:
-            lst.pop(ad)
-        else:
-            print(f"Item {ad} not found in the list.")
+        key1 = input(f"What kind of item is going to be removed?\n({shw}/{rpt})\n").upper()
+        inpt = input(f"What would you like to remove?\n").upper()
+        lst[key1] = [x for x in lst[key1] if x != inpt]  
+
     print(f"\n\n{lst}")
     ans = int(input(" 1 for menu\n 2 for end\n"))
     if ans == 1:
@@ -64,8 +62,7 @@ def add(lst, cnt):
     shw = 0
     while shw < rpt:
         shw += 1
-        ad = input(f"What kind of item is going to be added?\n({shw}/{rpt})\n")
-        lst[ad] = input(f"What item do you want to add?\n({shw}/{rpt})\n")
+        lst.setdefault((input(f"What kind of item is going to be added?\n({shw}/{rpt})\n").upper()), []).append(input(f"What item do you want to add?\n").upper())
     print(f"\n\n{lst}")
     ans = int(input(" 1 for menu\n 2 for end\n"))
     if ans == 1:
@@ -86,8 +83,6 @@ def view(lst, cnt):
         cnt = 0
         return cnt, lst
 
-#Finally got it Ms. Larose
-#I had ChatGPT teach me return values for multiple things, it works great
 #This function is the menu and will keep running unless the variable is 0
 def main(lst, cnt):
     while cnt > 0:  # Ensure the main loop only runs if cnt > 0
