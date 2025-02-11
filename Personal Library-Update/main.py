@@ -16,6 +16,11 @@ Good use of white space to keep items separate and easy to read/find
 Have at least 2 people test your code before submission!
 '''
 
+dic = {
+    "key": "value"
+}
+
+
 lst = []
 
 cnt = 1
@@ -55,8 +60,12 @@ def remove(lst, cnt):
 def add(lst, cnt):
     rpt = 4
     shw = 0
-    lst.append({(input("What is the name of the item?\n").upper): [(input("What is one thing you would like to mention about it?\n").upper()), (input("What is a second thing you would like to mention about it?\n").upper()), (input("What is a third thing you would like to mention about it?\n").upper()), (input("What is a fourth thing you would like to mention about it?\n").upper())]})
-    #lst.setdefault((input(f"What kind of item is going to be added?\n({shw}/{rpt})\n").upper()), []).append(input(f"What item do you want to add?\n").upper())
+    dict = input("What is the name of the item?\n")
+    nme = dict
+    dict = {
+        input("What type of information do you want to add?\n"): input("What information are you adding?\n") for _ in range(4)
+        }
+    lst.append([nme, dict])
     print(f"\n\n{lst}")
     ans = int(input(" 1 for menu\n 2 for end\n"))
     if ans == 1:
@@ -68,13 +77,12 @@ def add(lst, cnt):
 
 #Shows you the list
 def view(lst, cnt):
-    ans = int(input(" 1 show whole list\n 2 just name of items\n"))
+    ans = int(input(" 1 show whole list\n 2 just names of items\n"))
     if ans == 1:
         print(lst)
     elif ans == 2:
         for i in lst:
-            for key in i.keys():
-                print(key)
+            print(i)
     ans = int(input(" 1 for menu\n 2 for end\n"))
     if ans == 1:
         cnt = 1
