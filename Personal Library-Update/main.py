@@ -68,7 +68,13 @@ def add(lst, cnt):
 
 #Shows you the list
 def view(lst, cnt):
-    print(lst)
+    ans = int(input(" 1 show whole list\n 2 just name of items\n"))
+    if ans == 1:
+        print(lst)
+    elif ans == 2:
+        for i in lst:
+            for key in i.keys():
+                print(key)
     ans = int(input(" 1 for menu\n 2 for end\n"))
     if ans == 1:
         cnt = 1
