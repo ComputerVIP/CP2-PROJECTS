@@ -13,16 +13,39 @@ def fltrsrch(rpt):
     with open("Reading files\Movies list.csv", "r") as file:
         cnt = csv.reader(file)
         next(cnt)
-        ans = input("What do you want to filter by?\n").lower()
-        for row in cnt:
-            if ans in str(row).lower():
-                print(row)
+        rept = input("One or two filters?\n").lower()
+        rept = rept.replace("two", "2").replace("one", "1")
+        try:
+            rept = int(rept)
+        except:
+            return rpt, ("You have inputted a non-number, please enter a number")
+        if rept == 1:
+            ans = input("What do you want to filter by?\n").lower()
+            for row in cnt:
+                if ans in str(row).lower():
+                    row = str(row).replace("[", "").replace("]", "").replace("'", "")
+                    print(row)
+        elif rept == 2:
+            ans = input("What do you want to filter by?\n").lower()
+            ask = input("What else do you want to filter by?\n").lower()
+            for row in cnt:
+                if ans in str(row).lower():
+                    if ask in str(row).lower():
+                        row = str(row).replace("[", "").replace("]", "").replace("'", "")
+                        print(row)
+        else:
+            print("You have inputted a number higher than allowed")
     return rpt
 def typsrch(rpt):
     with open("Reading files\Movies list.csv", "r") as file:
         cnt = csv.reader(file)
         next(cnt)
-        ans = int(input("Show names(1)\nShow directors(2)\nShow genres(3)\nShow rating(4)\nShow length(5)\n Show notable actors(6)\n"))
+        ans = input("Show names(1)\nShow directors(2)\nShow genres(3)\nShow rating(4)\nShow length(5)\n Show notable actors(6)\n").lower()
+        ans = ans.replace("one", "1").replace("two", "2").replace("three", "3").replace("four", "4").replace("five", "5").replace("six", "6")
+        try:
+            ans = int(ans)
+        except:
+            return rpt, ("You have inputted a non-number, please enter a number")
         ans -= 1
         for row in cnt:
             try:
@@ -37,12 +60,18 @@ def recco(rpt):
         ans = input("What genre, director, rating, length, actors, or names do you want to get reccomendations for?\n").lower()
         for row in cnt:
             if ans in str(row).lower():
+                row = str(row).replace("[", "")
+                row = row.replace("]", "")
+                row = row.replace("'", "")
                 print(row)
     return rpt
 def whole(rpt):
     with open("Reading files\Movies list.csv", "r") as file:
         cnt = csv.reader(file)
         for row in cnt:
+            row = str(row).replace("[", "")
+            row = row.replace("]", "")
+            row = row.replace("'", "")
             print(row)
     return rpt
 def main(rpt):
