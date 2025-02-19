@@ -46,7 +46,11 @@ with open("Writing Files Notes/test.csv", "w+", newline="") as file:
         while b > 0:
             a.append("Blah")
             b -= 1
-        d = random.randint(-1, 1)
+        d = random.randint(-99, 100)
+        if d > 0:
+            d = 1
+        else:
+            d = -1
         c += d
         b = c
         writer.writerow(a)
