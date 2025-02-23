@@ -1,4 +1,6 @@
 #Vincent Johnson, To Do List
+#ms larse did a thing
+#-Ms. Larose
 
 '''
 Create a to do list (Kept on a txt file)
@@ -34,7 +36,7 @@ def add():
                 file.write(f"\n{key}:{value}\n")
         for key, values in res.items(): #Prints the dictionary again
             print(f"{key}: {values}")
-    return
+    return ""
 
 def mark():
     with open('To Do list/List.txt', 'r') as file:
@@ -74,8 +76,7 @@ def mark():
             if ad in res: #Sets value to-do
                 res[ad] = 'TODO'
             else: #Makes sure it is in the list
-                print("You can't mark something that isn't there!") #I know, bad practice, but if I put a print on there, it just prints 'None' if it works right
-                return
+                return "You can't mark something that isn't there!"
             for key, value in res.items(): #Writes to the file
                 file.write(f"\n{key}:{value}")
             for key, values in res.items(): #Shows dictionary nicely
@@ -83,7 +84,7 @@ def mark():
         pass
     else:
         pass   
-    return
+    return ""
 
 def delete():
     with open('To Do list/List.txt', 'r') as file:
@@ -113,7 +114,7 @@ def delete():
             file.write(f"\n{key}:{value}")
         for key, values in res.items(): #Shows dictionary nicely
             print(f"{key}: {values}")
-    return
+    return ""
 
 def show():
     with open('To Do list/List.txt', 'r') as file:
@@ -155,9 +156,10 @@ def show():
                     print(f"{key}: {values}")
             except:
                 pass
+        a = ""
     except:
-        print("Not a valid input!")
-    return
+        a = "Not a valid input!"
+    return a
 
 def search():
     with open('To Do list/List.txt', 'r') as file:
@@ -179,9 +181,9 @@ def search():
                     pass
         except:
             pass
-    return
+    return ""
 
-def main(repeat):
+def main(repeat): #Main menu, just allows you to choose which function to run
     ans = input('''What would you like to do?
     1 for adding items
     2 for marking items as completed
@@ -193,15 +195,15 @@ def main(repeat):
     try:
         ans = int(ans)
         if ans == 1:
-            add()
+            print(add())
         elif ans == 2:
             print(mark())
         elif ans == 3:
-            delete()
+            print(delete())
         elif ans == 4:
-            show()
+            print(show())
         elif ans == 5:
-            search()
+            print(search())
         elif ans == 6:
             repeat = 0
             return repeat
@@ -211,6 +213,6 @@ def main(repeat):
     repeat = 1
     return repeat
 
-while repeat > 0:
+while repeat > 0: #Makes sure that the menu is always running unless told not to
     repeat = main(repeat)
-print("Goodbye")
+print("Goodbye") #Says goodbye before ending the program
