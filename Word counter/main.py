@@ -33,14 +33,13 @@ What would you like to do?
     elif ans == 2:
         r()
     elif ans == 3:
-        repeat = 0
+        print('Goodbye!')
+        return 0 #makes the repeat variable 0
     else:
         print('Invalid input!')
     return repeat
 
-while __name__ == "__main__": #Makes sure the program only runs when it's main
+if __name__ == '__main__': #Makes sure the program only runs when it's main
     repeat = 1
     while repeat > 0:
         repeat = main(repeat)
-    print('Goodbye!')
-    break #Ends the program
