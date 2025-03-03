@@ -1,7 +1,8 @@
 import os
 
 def new():
-    script_folder = os.path.dirname(os.path.abspath(__file__))
+    input()
+    script_folder = os.path.dirname(os.__fspath__(__file__))
     new_file_path = os.path.join(script_folder, input('What would you like to name your file?\n'))
     try:
         # Open the file in 'x' mode to create a new file (raises error if exists)
@@ -46,3 +47,4 @@ def choose():
         else: #If not
             return
     return file_path
+new()
