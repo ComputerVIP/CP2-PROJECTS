@@ -1,13 +1,15 @@
 import csv
+import random
+
 def profiles():
-    with open('Battle Simulator/profiles.csv', 'r') as file:
+    with open('Battle Simulator/profiles.csv', 'r') as file: #Gives a list of every character to choose from
         read = csv.reader(file)
         next(read)
         print('List of characters:')
         for row in read:
             print('    ' + row[0])
     ans = input('What is the name of your character?\n')
-    with open('Battle Simulator/profiles.csv', 'r') as file:
+    with open('Battle Simulator/profiles.csv', 'r') as file: #This allows you to pick a character
         read = csv.reader(file)
         next(read)
         valid_prfl = 'Inval'
@@ -15,6 +17,7 @@ def profiles():
             if ans.lower() == 'legend':
                 print('You cannot  pick this character!')
                 valid_prfl = 'None'
+                break
             elif ans.lower() == row[0].lower():
                 valid_prfl = row
                 print(f'''
@@ -29,7 +32,30 @@ Stats:
                     
         if valid_prfl == 'Inval':
             valid_prfl = mke_prfl(ans)
-    return valid_prfl
+    
+    enmy_prfl = []
+    with open('Battle Simulator/profiles.csv', 'r') as file:
+        read = csv.reader(file)
+        next(read)
+        for row in read:
+            if row[0].upper() == valid_prfl[0].upper():
+                continue
+            enmy_prfl.append(row)
+        enmy_prfl = random.choice(enmy_prfl)
+
+    for i in range(len(enmy_prfl)):
+        try:
+            enmy_prfl[i] = int(enmy_prfl[i])
+        except ValueError:
+            pass
+    for i in range(len(valid_prfl)):
+        try:
+            valid_prfl[i] = int(valid_prfl[i])
+        except ValueError:
+            pass
+    base_prfl = valid_prfl.copy()
+    enmy_base_prfl = enmy_prfl.copy()
+    return valid_prfl, enmy_prfl, base_prfl, enmy_base_prfl
 
 
 

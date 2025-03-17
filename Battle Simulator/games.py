@@ -4,33 +4,11 @@ import random
 import time
 
 def game():
-    enmy_prfl = []
-    valid_prfl = profiles()
+    valid_prfl, enmy_prfl, base_prfl, enmy_base_prfl = profiles()
     input('Press anything to continue...\n')
     win = 1
     if valid_prfl == 'None':
         game()
-    with open('Battle Simulator/profiles.csv', 'r') as file:
-        read = csv.reader(file)
-        next(read)
-        for row in read:
-            if row[0].upper() == valid_prfl[0].upper():
-                continue
-            enmy_prfl.append(row)
-        enmy_prfl = random.choice(enmy_prfl)
-
-    for i in range(len(enmy_prfl)):
-        try:
-            enmy_prfl[i] = int(enmy_prfl[i])
-        except ValueError:
-            pass
-    for i in range(len(valid_prfl)):
-        try:
-            valid_prfl[i] = int(valid_prfl[i])
-        except ValueError:
-            pass
-    base_prfl = valid_prfl.copy()
-    enmy_base_prfl = enmy_prfl.copy()
     turn = random.randint(1,2)
 
     def cmbt(win, turn):
