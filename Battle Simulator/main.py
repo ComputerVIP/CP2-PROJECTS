@@ -39,12 +39,14 @@ Additional Features (Optional): (NOTE: only awarded IF all 20 of the required po
 '''
 import csv
 from games import game
+from profile import mke_prfl
 
 
 def main(repeat):
     ans = input('''What would you like to do?
     Play game (1)
     Make profile (2)
+    Exit (3)
 ''')
     try:
         ans = int(ans)
@@ -52,13 +54,14 @@ def main(repeat):
         main(repeat)
 
     if ans == 1:
-        game()
+        print(game())
     elif ans == 2:
-        mke_prfl()
+        mke_prfl(input('What is the name of your character?\n'))
     else:
         repeat = 0
     return repeat
 if __name__ == "__main__":
     repeat = 1
     while repeat > 0:
-        main(repeat)
+        repeat = main(repeat)
+    print('Goodbye!!!')
