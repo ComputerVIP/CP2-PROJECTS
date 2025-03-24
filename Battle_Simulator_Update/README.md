@@ -16,9 +16,9 @@ NOT USED FOR CLASS.
 ---
 
 This program is very simple to use, and most of the buttons correspond to the action, if no button is provided, just close the window and it will run the main menu again. 
-![image](Battle_Simulator_Update/menu_video.mp4)
-![image](Battle_Simulator_Update/circle.png)
-![image](Battle_Simulator_Update\stats.png)
+![image](CP2-Projects/Battle_Simulator_Update/menu_video.mp4)
+![image](CP2-Projects/Battle_Simulator_Update/circle.png)
+![image](CP2-Projects/Battle_Simulator_Update/stats.png)
 
 
 ## Used Technology
