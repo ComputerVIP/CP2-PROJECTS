@@ -16,7 +16,9 @@ NOT USED FOR CLASS.
 ---
 
 This program is very simple to use, and most of the buttons correspond to the action, if no button is provided, just close the window and it will run the main menu again. 
-![image](**<relative path here>**) Note, image has to be in repository.  
+![image](Battle Simulator Update\Captures\main.py - CP2-PROJECTS - Visual Studio Code 2025-03-24 13-29-45.mp4)
+![image](Battle Simulator Update\Captures\Screenshot 3_24_2025 1_31_27 PM.png)
+![image](Battle Simulator Update\Captures\Statistical Analysis 3_24_2025 1_30_32 PM.png)
 
 
 ## Used Technology
