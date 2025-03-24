@@ -16,9 +16,9 @@ NOT USED FOR CLASS.
 ---
 
 This program is very simple to use, and most of the buttons correspond to the action, if no button is provided, just close the window and it will run the main menu again. 
-![image](Battle Simulator Update\main.py - CP2-PROJECTS - Visual Studio Code 2025-03-24 13-29-45.mp4)
-![image](Battle Simulator Update\Screenshot 3_24_2025 1_31_27 PM.png)
-![image](Battle Simulator Update\Statistical Analysis 3_24_2025 1_30_32 PM.png)
+![image](Battle_Simulator_Update/menu_video.mp4)
+![image](Battle_Simulator_Update/circle.png)
+![image](Battle_Simulator_Update\stats.png)
 
 
 ## Used Technology
