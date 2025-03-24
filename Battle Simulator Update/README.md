@@ -3,7 +3,7 @@
 ## Project Desc.
 ---
 
-This is an updated version of an earlier project, including some bug fixes, and a to of other things.
+This is an updated version of an earlier project, including some bug fixes, and a ton of other things. This code simulates a game where characters battle other characters! Choose a character or create one, choose your class, and go to battle! New updates include statistical analysis of player's stats, and a circle graph to show where most of your skill points are at!
 
 
 ## Installation
@@ -15,7 +15,7 @@ NOT USED FOR CLASS.
 ## Execution and Usage
 ---
 
-Paragraph describing how to use this program.  
+This program is very simple to use, and most of the buttons correspond to the action, if no button is provided, just close the window and it will run the main menu again. 
 ![image](**<relative path here>**) Note, image has to be in repository.  
 
 
@@ -23,14 +23,13 @@ Paragraph describing how to use this program.
 ---
 
 + First library in repo
-`pip install **<name of library>***`  
+`pip install faker`  
 
 + Second library in repo
-`pip install **<name of library>***`  
+`pip install pandas`  
 
 + Third library in repo
-`pip install **<name of library>***`  
-List of all libraries used for the project.  
+`pip install matplotlib`  
 
 
 ## Current Features
@@ -38,9 +37,11 @@ List of all libraries used for the project.
 
 + Windowed menu
 
-+ Main feature two
++ Enhanced statistical analysis of characters
 
-+ Main feature three  
++ Streamline game
+
++ updated character selection  
 
 
 ## Contributions
@@ -51,26 +52,19 @@ NOT USED FOR CLASS
 ## Contributers
 ---
 
-+ Person who helped with the project, what they did
++ Github copilot, helped fix some issues found in the code, gave ideas on using classes, and how to control the use of those classes
 
-+ Person who helped with the project, what they did
-
-+ Person who helped with the project, what they did
-
-+ Person who helped with the project, what they did  
++ Tkinter team, their documentation allowed me to do things with it to make this project what it was
 
 
 ## Author's Information
 ---
-Vincent Johnson is an asipring python developer and is currently in highschool. He has made a lot of projects for school and involves himself in the cybersecurity community. He has been mentored by his father and uncle, who both work in the cybersecurity industry. He has some experience in Java and mainly codes using python.
-
-Short paragraph about author (EACH member of the group has one)
-Includes contact information
+Vincent Johnson is an asipring python developer and is currently in high-school. He has made a lot of projects for school and involves himself in the cybersecurity community. He has been mentored by his father and uncle, who both work in the cybersecurity industry. He has some experience in Java and mainly codes using python.
 
 
 ## Change log
 ---
-NOT USED FOR CLASS
+Version 1.0 -- Many additions made to the previous project, 
 
 
 ## License
